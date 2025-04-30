@@ -5,12 +5,12 @@ type: extension
 site: https://github.com/Nuyoah66/zentao_ldap
 author: 'Nuyoah<z670536535@gmail.com>'
 abstract: >
-  支持从LDAP服务器上同步用户信息（账号、真实姓名、邮箱），以及使用LDAP验证登录。
+  支持从LDAP/AD服务器上同步用户信息（账号、真实姓名、邮箱），以及使用LDAP/AD验证登录。
 desc: >
-  1.插件安装后，在左侧导航栏会有一个LDAP子页面，可在该页面配置LDAP服务器信息
-  2.在LDAP配置页面可以测试是否能够正常连接LDAP服务器
-  3.保存配置后，点击“手动同步”按钮，从LDAP服务器上同步用户信息
-  4.同步用户信息以后，可以使用LDAP用户登录禅道
+  1.插件安装后，在左侧导航栏会有一个LDAP菜单，可在该页面配置LDAP/AD服务器信息
+  2.在LDAP/AD配置页面可以测试是否能够正常连接LDAP/AD服务器
+  3.保存配置后，点击“同步LDAP/AD用户”按钮，从LDAP/AD服务器上同步用户信息
+  4.同步用户信息以后，可以使用LDAP/AD用户登录禅道
   5.本地用户，通过在账户名称前加“$”符号来登录禅道
 install: |
   1. 通过禅道的插件管理来进行安装。
@@ -18,12 +18,19 @@ install: |
     1.2 打开获得插件页面，点击本地安装。
     1.3 选择插件压缩包，点击安装插件，按照页面提示即可。
 releases:
+  1.2:
+    zentaoversion: 18.13
+    charge: Free
+    license: LGPL
+    changelog: >
+      1. 优化配置页面
+    date: 2025-04-30
   1.1:
     zentaoversion: 18.13
     charge: Free
     license: LGPL
     changelog: >
-      1. 修复LDAP用户邮箱为空时，同步用户导致同步失败的问题
+      1. 修复LDAP/AD用户邮箱为空时，同步用户导致同步失败的问题
     date: 2025-04-26
   1.0:
     zentaoversion: 18.13
@@ -35,5 +42,5 @@ releases:
       3. 支持使用LDAP用户登录禅道
       4. 支持本地用户，通过在账户名称前加“$”符号来登录禅道
       5. 禁止LDAP用户修改账号密码
-      6. 禅道删除的用户与LDAP用户存在同名账户时，同步LDAP用户时，会启用账户并更新信息
+      6. 禅道删除的用户与LDAP/AD用户存在同名账户时，同步LDAP/AD用户时，会启用账户并更新信息
     date: 2025-04-25

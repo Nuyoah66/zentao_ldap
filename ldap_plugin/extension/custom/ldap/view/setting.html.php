@@ -1,11 +1,9 @@
-<?php
-?>
 <?php include $app->getModuleRoot() . 'common/view/header.html.php';?>
 <?php include $app->getModuleRoot() . 'common/view/datepicker.html.php';?>
 <div class='container mw-700px'>
     <div id='titlebar'>
         <div class='heading'>
-            <strong><?php echo $lang->ldap->common;echo $lang->ldap->setting;?></strong>
+            <strong><?php echo $lang->ldap->common.'：';echo $lang->ldap->setting;?></strong>
         </div>
     </div>
     <form class='form-condensed pdt-20' method='post' action='<?php echo inlink('save');?>'>
@@ -64,7 +62,7 @@
             <tr>
                 <th class='w-p25'><?php echo $lang->ldap->group; ?></th>
 		        <td class='w-p50'><?php echo html::select('group', $groupList, (!empty($group) ? $group : ''), "class='form-control chosen'");?></td>
-		        <td><?php echo $lang->ldap->placeholder->group;?></td>
+		        <td><?php echo $lang->ldap->grouptips;?></td>
             </tr>
             <tr>
                 <td class='w-p25'></td>
@@ -79,7 +77,7 @@ echo html::commonButton($lang->ldap->sync, 'onclick="javascript:sync()"');
         </table>
     </form>
 </div>
-<?php include '../../common/view/footer.html.php';?>
+<?php include $app->getModuleRoot() . 'common/view/footer.html.php';?>
 
 <?php
   echo '<script>';
